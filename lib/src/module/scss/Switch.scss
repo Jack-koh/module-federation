@@ -1,0 +1,49 @@
+.jk__switch__container {
+  width: 50px;
+  height: 20px;
+  position: relative;
+  user-select: none;
+  border-radius: 25px;
+  padding: 2px;
+  background-color: #e6e6e6;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+
+  .switch__text {
+    position: absolute;
+    font-weight: 700;
+    font-size: 12px;
+    color: #fff;
+    top: 50%;
+    right: 7px;
+    transform: translateY(-50%);
+  }
+
+  .switch__button {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    left: 2px;
+    top: 2px;
+    position: absolute;
+    transition: all 0.2s ease;
+  }
+
+  &.on {
+    background-color: #006dbc;
+    .switch__button {
+      left: 32px;
+    }
+
+    .switch__text {
+      left: 7px;
+    }
+  }
+
+  &.disabled {
+    cursor: initial;
+    background-color: #e6e6e6;
+  }
+}

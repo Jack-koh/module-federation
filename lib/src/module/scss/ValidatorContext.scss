@@ -1,0 +1,16 @@
+@import "./utils.scss";
+
+.jk__validator__error__message {
+  white-space: nowrap;
+  padding: 12px 16px;
+  border-radius: 2px;
+  color: $error;
+
+  & > div {
+    line-height: 20px;
+  }
+
+  & > div {
+    line-height: 20px;
+  }
+}

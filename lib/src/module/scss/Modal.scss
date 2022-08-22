@@ -1,0 +1,115 @@
+@import "./utils.scss";
+
+@mixin CSSTransition {
+  .jk__modal__content {
+    transition: opacity 150ms, transform 150ms;
+  }
+  .jk__modal__bg__screen {
+    transition: opacity 150ms, transform 150ms;
+  }
+
+  &.enter {
+    .jk__modal__content {
+      opacity: 0;
+      transform: scale(0);
+    }
+    .jk__modal__bg__screen {
+      opacity: 0;
+    }
+  }
+
+  &.enter-active {
+    .jk__modal__content {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    .jk__modal__bg__screen {
+      opacity: 0;
+    }
+  }
+
+  &.enter-done {
+    .jk__modal__content {
+      opacity: 1;
+    }
+    .jk__modal__bg__screen {
+      opacity: 0.4;
+    }
+  }
+
+  &.exit {
+    .jk__modal__content {
+      opacity: 1;
+    }
+
+    .jk__modal__bg__screen {
+      opacity: 0.4;
+    }
+  }
+  &.exit-active {
+    .jk__modal__content {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    .jk__modal__bg__screen {
+      opacity: 0;
+    }
+  }
+
+  &.exit-done {
+    .jk__modal__content {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    .jk__modal__bg__screen {
+      opacity: 0;
+    }
+  }
+}
+
+.jk__modal {
+  @include CSSTransition;
+  @include flex(center, center);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+
+  .jk__modal__content {
+    padding: 0 16px;
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .jk__modal__bg__screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: #000000;
+    opacity: 0.4;
+    z-index: -1;
+  }
+}
+
+.jk__modal__button {
+  cursor: pointer;
+}
+
+// Layout ==================================================
+.jk__modal__title {
+  padding: 16px 0;
+  font-weight: 500;
+}
+
+.jk__modal__actions {
+  @include flex(center, flex-end);
+  padding: 8px 0;
+  gap: 8px;
+}

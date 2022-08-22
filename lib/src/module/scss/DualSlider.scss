@@ -1,0 +1,48 @@
+.custom__multi__range__slider {
+  width: 100%;
+  position: relative;
+
+  @mixin rangeInput {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 8px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #ededed;
+    pointer-events: none;
+    cursor: pointer;
+
+    &::-webkit-slider-thumb {
+      position: relative;
+      border: 5px solid #ac1631;
+      height: 14px;
+      width: 14px;
+      background: #fff;
+      cursor: pointer;
+      pointer-events: all;
+      appearance: none;
+      -webkit-appearance: none;
+      z-index: 3;
+      border-radius: 50%;
+    }
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  input[type="range"].custom__range__slider__lower {
+    @include rangeInput;
+  }
+  input[type="range"].custom__range__slider__upper {
+    @include rangeInput;
+  }
+
+  .range {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 8px;
+    background-color: #b68184;
+    border-radius: 50px;
+  }
+}

@@ -1,0 +1,30 @@
+@import "./utils.scss";
+
+.jk__radio__group {
+  &.disabled {
+    .jk__radio__item {
+      color: $disabled-color;
+      svg {
+        color: $disabled-color;
+      }
+    }
+  }
+}
+
+.jk__radio__item {
+  .jk__radio__box {
+    @include flex(initial, initial);
+    gap: 6px;
+    user-select: none;
+    cursor: pointer;
+
+    & > div {
+      width: 24px;
+      height: 24px;
+      svg {
+        font-size: 1.2em;
+        color: $blue;
+      }
+    }
+  }
+}

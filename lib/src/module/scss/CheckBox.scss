@@ -1,0 +1,81 @@
+@import "./utils.scss";
+
+.jk__checkbox {
+  @include flex(center, initial);
+  width: max-content;
+  padding: 3px;
+  font-style: normal;
+  cursor: pointer;
+  user-select: none;
+
+  &.checked {
+    .jk__checkbox__container {
+      background-color: $blue;
+      border-color: $blue;
+    }
+  }
+
+  &.indeter {
+    .jk__checkbox__container {
+      background-color: $blue;
+      border-color: $blue;
+    }
+  }
+
+  &.disabled {
+    cursor: initial;
+    .jk__checkbox__container {
+      background-color: $disabled-bg;
+      border: $disabled-color;
+    }
+
+    .jk__checkbox__label {
+      opacity: 0.3;
+    }
+  }
+
+  .jk__checkbox__container {
+    @include flex(center, center);
+    width: 16px;
+    height: 16px;
+    position: relative;
+    border-radius: 2px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    border: 1px solid $border;
+    background-color: #fff;
+
+    .jk__checkbox__check__icon {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+    }
+
+    .jk__checkbox__indeterminate__icon {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+    }
+  }
+
+  .jk__checkbox__label {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+    transition: color 0.1s;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    user-select: none;
+    color: inherit;
+    font-size: inherit;
+  }
+}

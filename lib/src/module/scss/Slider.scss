@@ -1,0 +1,66 @@
+@import "./utils.scss";
+
+.jk__single__slider {
+  position: relative;
+  width: 500px;
+  height: 50px;
+
+  input[type="range"] {
+    width: inherit;
+    height: inherit;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 3;
+    opacity: 1;
+    outline: none;
+    width: inherit;
+    -webkit-appearance: none;
+    background-color: transparent;
+
+    &::-webkit-slider-runnable-track {
+      cursor: pointer;
+    }
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #373eff;
+    }
+  }
+
+  .slider__rail {
+    position: absolute;
+    z-index: 1;
+    width: inherit;
+    height: 2px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #e6e6e6;
+  }
+
+  .slider__dot {
+    @include flex(initial, space-between);
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+
+  .slider__count {
+    @include flex(initial, space-between);
+    position: absolute;
+    height: 10px;
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    font-size: 12px;
+  }
+}

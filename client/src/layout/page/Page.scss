@@ -1,0 +1,22 @@
+#jk-ui-components-demo-layout {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-auto-rows: auto;
+
+  #jk-logo {
+    width: 100%;
+    height: 80px;
+    background-color: ivory;
+  }
+
+  section#navigator-section {
+    width: 300px;
+    height: 100%;
+  }
+
+  #main-content {
+    background-color: gainsboro;
+  }
+}

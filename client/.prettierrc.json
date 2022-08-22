@@ -1,0 +1,11 @@
+{
+  "dobuleQuote": true,
+  "semi": true,
+  "printWidth": 120,
+  "bracketSpacing": true,
+  "bracketSameLine": true,
+  "trailingComma": "all",
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "Semicolons": true
+}

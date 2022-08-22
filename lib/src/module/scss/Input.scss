@@ -1,0 +1,62 @@
+@import "./utils.scss";
+
+.jk__input {
+  display: inline-block;
+  position: relative;
+
+  &.disabled {
+    input {
+      background-color: $disabled-bg;
+      color: $disabled-color;
+    }
+  }
+
+  &.error {
+    input {
+      border-color: $error !important;
+    }
+  }
+
+  input {
+    width: 300px;
+    border: 1px solid $border;
+    padding: 16px 14px;
+    font-size: 1rem;
+    color: #000000de;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    border-radius: 4px;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+    &:focus {
+      border-color: $blue;
+    }
+
+    &[type="password"] {
+      padding-right: 36px;
+    }
+
+    &::placeholder {
+      font-size: inherit;
+    }
+  }
+
+  button.jk__input__lock__icon {
+    @include flex(center, center);
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+
+    svg {
+      width: 80%;
+      height: 80%;
+    }
+  }
+}

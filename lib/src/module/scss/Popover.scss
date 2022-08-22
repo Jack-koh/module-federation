@@ -1,0 +1,61 @@
+@import "./utils.scss";
+
+@mixin CSSTransition {
+  transition: opacity 150ms;
+
+  &.enter {
+    opacity: 0;
+  }
+  &.enter-active {
+    opacity: 0;
+  }
+
+  &.enter-done {
+    opacity: 1;
+  }
+
+  &.exit {
+    opacity: 1;
+  }
+
+  &.exit-active {
+    opacity: 0;
+  }
+
+  &.exit-done {
+    opacity: 0;
+  }
+}
+
+.jk__popover__button {
+  cursor: pointer;
+}
+
+@mixin container {
+  @include CSSTransition;
+  position: fixed;
+  z-index: 100;
+}
+
+@mixin content {
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1), 0 2px 3px 0 rgba(71, 51, 51, 0.1),
+    0 1px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.jk__popover__poper {
+  @include container;
+  .jk__popover__poper__content {
+    @include content;
+  }
+}
+.jk__popover__menu {
+  @include container;
+
+  .jk__popover__menu__content {
+    @include content;
+  }
+}
